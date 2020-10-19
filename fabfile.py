@@ -56,3 +56,4 @@ def deploy():
 
 def rollback():
     local("heroku rollback")
+
