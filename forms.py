@@ -217,4 +217,4 @@ class ArtistForm(Form):
         'facebook_link', validators=[URL()]
     )
 
-# TODO IMPLEMENT NEW ARTIST FORM AND NEW SHOW FORM
+
