@@ -37,13 +37,13 @@ class Venue(db.Model):
     __tablename__ = 'Venue'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
-    city = db.Column(db.String(120))
-    state = db.Column(db.String(120))
-    address = db.Column(db.String(120))
-    phone = db.Column(db.String(120))
+    name = db.Column(db.String(100))
+    city = db.Column(db.String(100))
+    state = db.Column(db.String(100))
+    address = db.Column(db.String(100))
+    phone = db.Column(db.String(100))
     image_link = db.Column(db.String(500))
-    facebook_link = db.Column(db.String(120))
+    facebook_link = db.Column(db.String(100))
 
     # TODO: implement any missing fields, as a database migration using Flask-Migrate
 
@@ -52,12 +52,12 @@ class Artist(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
-    city = db.Column(db.String(120))
-    state = db.Column(db.String(120))
-    phone = db.Column(db.String(120))
-    genres = db.Column(db.String(120))
+    city = db.Column(db.String(100))
+    state = db.Column(db.String(100))
+    phone = db.Column(db.String(100))
+    genres = db.Column(db.String(100))
     image_link = db.Column(db.String(500))
-    facebook_link = db.Column(db.String(120))
+    facebook_link = db.Column(db.String(100))
 
    
 
