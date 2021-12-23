@@ -45,8 +45,7 @@ class Venue(db.Model):
     image_link = db.Column(db.String(500))
     facebook_link = db.Column(db.String(100))
 
-    # TODO: implement any missing fields, as a database migration using Flask-Migrate
-
+    
 class Artist(db.Model):
     __tablename__ = 'Artist'
 
@@ -453,8 +452,10 @@ if not app.debug:
 if __name__ == '__main__':
     app.run()
 
-# Or specify port manually:
+                 
+      
 '''
+# Or specify port manually:
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
