@@ -12,6 +12,6 @@ DEBUG = True
 # Connect to the database
 SQLALCHEMY_DATABASE_URI = "postgres://{}@{}/{}".format(
     "reem", '127.0.0.1:5432', "fyyur")
-SQLALCHEMY_TRACK_MODIFICATIONS = True'
+SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 

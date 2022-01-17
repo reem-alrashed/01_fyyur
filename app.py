@@ -330,7 +330,7 @@ def edit_venue_submission(venue_id):
     flash(f'Error! Venue could not be updated.')
   if not error: 
     flash(f'Venue was successfully updated.')
-  return redirect(url_for('show_venue', venue_id=venue_id)
+  return redirect(url_for('show_venue', venue_id=venue_id))
 
 
 
