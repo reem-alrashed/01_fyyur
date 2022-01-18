@@ -2,16 +2,20 @@
 # Imports
 #----------------------------------------------------------------------------#
 
+import functools
 import json
+import sys
 import dateutil.parser
 import babel
 from flask import Flask, render_template, request, Response, flash, redirect, url_for
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
 import logging
-from logging import Formatter, FileHandler
+from logging import Formatter, FileHandler, Manager
 from flask_wtf import Form
 from forms import *
+
+
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
@@ -21,7 +25,7 @@ moment = Moment(app)
 app.config.from_object('config')
 db = SQLAlchemy(app)
 db.init_app(app)
-migrate = Migrate(app, db)
+migrate.init_app(app, db)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
@@ -89,7 +93,7 @@ def index():
 
 @app.route('/venues')
 def venues():
-  areas = Venue.query.with_entities(func.count(Venue.id), Venue.city, Venue.state).group_by(Venue.city, Venue.state).all()
+  areas = Venue.query.with_entities(functools.count(Venue.id), Venue.city, Venue.state).group_by(Venue.city, Venue.state).all()
   data = []
   for area in areas:
     area_venues = Venue.query.filter_by(state=area.state).filter_by(city=area.city).all()
